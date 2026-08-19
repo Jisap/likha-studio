@@ -1,26 +1,78 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--bg, #0a0a0b);
+  --color-foreground: #f4f4ef;
+  --color-muted: #8a8a82;
+  --color-accent: var(--accent, #3d5afe);
+  --font-display: var(--font-archivo);
+  --font-body: var(--font-inter);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --accent: #3d5afe;
+  --bg: #0a0a0b;
+}
+
+html {
+  color-scheme: dark;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg, #0a0a0b);
+  color: var(--color-foreground);
+  font-family: var(--font-body), system-ui, sans-serif;
+  overflow-x: hidden;
+  transition: background 0.8s ease;
+}
+
+/* MARQUEE */
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee {
+  animation: marquee 24s linear infinite;
+}
+
+.marquee-reverse {
+  animation: marquee 28s linear infinite reverse;
+}
+
+/* WHY IT MATTERS */
+@keyframes slowPan {
+  0% {
+    transform: scale(1.05) rotate(0deg);
+  }
+
+  50% {
+    transform: scale(1.16) rotate(2deg);
+  }
+
+  100% {
+    transform: scale(1.05) rotate(0deg);
+  }
+}
+
+.whyus-anim {
+  animation: slowPan 14s ease-in-out infinite;
+}
+
+/* THEME SWITCHER - lumabo kapag bukas ang menu */
+.theme-switcher {
+  transition: opacity 0.3s ease;
+}
+
+.menu-open .theme-switcher {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* CUSTOM CURSOR */
+@media (pointer: fine) {
+  * {
+    cursor: none;
+  }
 }
