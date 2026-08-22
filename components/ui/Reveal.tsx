@@ -28,16 +28,16 @@ export default function Reveal({
 
   useGSAP(() => {
     gsap.from(ref.current, {
-      y: 50,              // Comienza 50px abajo
-      opacity: 0,         // Totalmente transparente
+      y: 50,                // Comienza 50px abajo
+      opacity: 0,           // Totalmente transparente
       filter: "blur(12px)", // Con desenfoque de 12px
-      rotateX: 8,         // Rotación en eje X de 8 grados
-      duration: 1.2,      // Duración de 1.2 segundos
-      delay,              // Retraso personalizado
-      ease: "power4.out", // Curva de aceleración suave
+      rotateX: 8,           // Rotación en eje X de 8 grados
+      duration: 1.2,        // Duración de 1.2 segundos
+      delay,                // Retraso personalizado
+      ease: "power4.out",   // Curva de aceleración suave
       scrollTrigger: {
-        trigger: ref.current,        // Elemento que dispara la animación
-        start: "top 90%",            // Cuando el top del elemento está al 90% de la ventana
+        trigger: ref.current,            // Elemento que dispara la animación
+        start: "top 90%",                // Cuando el top del elemento está al 90% de la ventana
         toggleActions: "restart none none reverse" // Comportamiento del trigger
       },
     });
