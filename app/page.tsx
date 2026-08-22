@@ -5,6 +5,7 @@ import Marquee from '@/components/sections/Marquee'
 import Mission from '@/components/sections/Mission'
 import Stats from '@/components/sections/Stats'
 import Testimonial from '@/components/sections/Testimonial'
+import WhyUs from '@/components/sections/WhyUs'
 
 
 const page = () => {
@@ -17,6 +18,7 @@ const page = () => {
       <Stats />
       <Marquee />
       <EditorialBreak />
+      <WhyUs />
     </main>
   )
 }
