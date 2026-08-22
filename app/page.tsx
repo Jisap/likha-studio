@@ -1,6 +1,7 @@
 import Collection from '@/components/sections/Collection'
 import Hero from '@/components/sections/Hero'
 import Mission from '@/components/sections/Mission'
+import Testimonial from '@/components/sections/Testimonial'
 
 
 const page = () => {
@@ -9,6 +10,7 @@ const page = () => {
       <Hero />
       <Mission />
       <Collection />
+      <Testimonial />
     </main>
   )
 }

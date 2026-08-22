@@ -14,7 +14,10 @@ const Collection = () => {
     <section id="services" className="px-6 py-28 md:px-10">
       <div className="mb-14">
         <p className="mb-3 text-sm uppercase tracking-[0.3em] text-accent">What We Offer</p>
-        <AnimatedTitle text="What We Do" className="font-display text-4xl font-black uppercase tracking-tight md:text-6xl" />
+        <AnimatedTitle
+          text="What We Do"
+          className="font-display text-4xl font-black uppercase tracking-tight md:text-6xl"
+        />
       </div>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
