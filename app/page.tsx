@@ -3,6 +3,7 @@ import EditorialBreak from '@/components/sections/EditorialBreak'
 import Hero from '@/components/sections/Hero'
 import Marquee from '@/components/sections/Marquee'
 import Mission from '@/components/sections/Mission'
+import ShowCase from '@/components/sections/ShowCase'
 import Stats from '@/components/sections/Stats'
 import Testimonial from '@/components/sections/Testimonial'
 import WhyUs from '@/components/sections/WhyUs'
@@ -19,6 +20,7 @@ const page = () => {
       <Marquee />
       <EditorialBreak />
       <WhyUs />
+      <ShowCase />
     </main>
   )
 }
