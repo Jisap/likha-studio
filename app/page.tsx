@@ -1,5 +1,6 @@
 import Collection from '@/components/sections/Collection'
 import EditorialBreak from '@/components/sections/EditorialBreak'
+import Film from '@/components/sections/Film'
 import Hero from '@/components/sections/Hero'
 import Industries from '@/components/sections/Industries'
 import Marquee from '@/components/sections/Marquee'
@@ -27,6 +28,7 @@ const page = () => {
       <Pricing />
       <Industries />
       <Statement />
+      <Film />
     </main>
   )
 }
