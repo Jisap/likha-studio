@@ -1,6 +1,7 @@
 import Collection from '@/components/sections/Collection'
 import EditorialBreak from '@/components/sections/EditorialBreak'
 import Hero from '@/components/sections/Hero'
+import Industries from '@/components/sections/Industries'
 import Marquee from '@/components/sections/Marquee'
 import Mission from '@/components/sections/Mission'
 import Pricing from '@/components/sections/Pricing'
@@ -23,6 +24,7 @@ const page = () => {
       <WhyUs />
       <ShowCase />
       <Pricing />
+      <Industries />
     </main>
   )
 }
