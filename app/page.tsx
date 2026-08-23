@@ -6,6 +6,7 @@ import Marquee from '@/components/sections/Marquee'
 import Mission from '@/components/sections/Mission'
 import Pricing from '@/components/sections/Pricing'
 import ShowCase from '@/components/sections/ShowCase'
+import Statement from '@/components/sections/Statement'
 import Stats from '@/components/sections/Stats'
 import Testimonial from '@/components/sections/Testimonial'
 import WhyUs from '@/components/sections/WhyUs'
@@ -25,6 +26,7 @@ const page = () => {
       <ShowCase />
       <Pricing />
       <Industries />
+      <Statement />
     </main>
   )
 }

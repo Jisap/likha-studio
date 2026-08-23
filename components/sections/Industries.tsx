@@ -32,7 +32,7 @@ const Industries = () => {
         <HyperFrame
           key={it.name}
           delay={(i % 3) * 0.08}
-          dir={i % 2 === 0
+          dir={i % 2 === 0 // Animación alterna de arriba hacia abajo para dar variedad
             ? "up"
             : "down"
           }
