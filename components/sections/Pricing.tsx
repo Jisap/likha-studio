@@ -68,6 +68,30 @@ const Pricing = () => {
             </p>
           </Reveal>
         </div>
+
+        <div>
+          <p className="mb-4 text-xs uppercase tracking-widest text-muted">Operate</p>
+          <HyperFrame
+            delay={0.15}
+            dir="up"
+          >
+            <div data-cursor="hover" className="flex h-full flex-col justify-between rounded-2xl border border-white/10 bg-linear-to-b from-accent/15 to-transparent p-8 transition-all duration-500 hover:-translate-y-1 hover:border-accent hover:shadow-[0_0_40px_rgba(61,90,254,0.25)]">
+              <div>
+                <h3 className="font-display text-2xl font-black uppercase leading-tight">
+                  We build it,<br />we run it.
+                </h3>
+
+                <p className="mt-4 text-sm text-white/70">
+                  Hosting, updates, backups, and small changes — handled monthly so you can focus on the business.
+                </p>
+              </div>
+
+              <p className="mt-8 font-display text-3xl font-black text-accent">
+                From ₱3,000<span className="text-base text-white/60">/mo</span>
+              </p>
+            </div>
+          </HyperFrame>
+        </div>
       </div>
     </section>
   )
