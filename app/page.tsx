@@ -1,5 +1,6 @@
 import About from '@/components/sections/About'
 import Collection from '@/components/sections/Collection'
+import Configurator from '@/components/sections/Configurator'
 import EditorialBreak from '@/components/sections/EditorialBreak'
 import Film from '@/components/sections/Film'
 import Gallery from '@/components/sections/Gallery'
@@ -33,6 +34,7 @@ const page = () => {
       <Film />
       <Gallery />
       <About />
+      <Configurator />
     </main>
   )
 }
