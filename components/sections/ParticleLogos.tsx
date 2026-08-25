@@ -67,8 +67,8 @@ const useLogoTargets = (url: string) => {
 const SmokeLogo = ({ url, morphKey }: { url: string; morphKey: number }) => {
   const targets = useLogoTargets(url);                    // Posiciones objetivo (forma del logo)
   const ref = useRef<THREE.Points>(null);                 // Referencia al objeto Points
-  const current = useRef<Float32Array>(...);              // Posiciones actuales interpoladas
-  const seed = useRef<Float32Array>(...);                 // Valores aleatorios únicos por partícula
+  const current = useRef<Float32Array>(new Float32Array(COUNT * 3)); // Posiciones actuales interpoladas
+  const seed = useRef<Float32Array>(new Float32Array(COUNT));        // Valores aleatorios únicos por partícula
   const dispersion = useRef(1);                           // Controla la dispersión inicial
 
   // Crea partículas distribuidas en un círculo/radio aleatorio (posición inicial dispersa)
