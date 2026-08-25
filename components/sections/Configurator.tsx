@@ -18,6 +18,23 @@ const Configurator = () => {
           text="Let's Build Yours"
           className="font-display text-4xl font-black uppercase tracking-tight md:text-6xl"
         />
+
+        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
+          {steps.map((s, i) => (
+            <Reveal
+              key={s.n}
+              delay={i * 0.1}
+            >
+              <div className="rounded-2xl border border-white/10 p-6">
+                <span className="font-display text-sm font-black text-accent">{s.n}</span>
+
+                <h3 className="mt-3 font-display text-xl font-black uppercase text-white">{s.title}</h3>
+
+                <p className="mt-2 text-sm text-white/60">{s.desc}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   )
