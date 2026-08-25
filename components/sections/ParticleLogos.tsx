@@ -179,9 +179,52 @@ function DragGroup({ children }: { children: React.ReactNode }) {
 }
 
 const ParticleLogos = () => {
+
+  const [active, setActive] = useState(0);
+  const total = socials.length;
+  const go = (dir: number) => setActive((p) => (p + dir + total) % total);
+
   return (
-    <div>ParticleLogos</div>
-  )
+    <section id="socials" className="px-6 py-28 md:px-10">
+      <div className="mb-4 text-center">
+        <p className="mb-3 text-sm uppercase tracking-widest text-accent">Connect</p>
+        <h2 className="font-display text-4xl font-black uppercase tracking-tight md:text-6xl">Follow The Studio</h2>
+      </div>
+
+      <div className="relative mx-auto h-[440px] w-full max-w-3xl" data-cursor="hover">
+        <Canvas camera={{ position: [0, 0, 6], fov: 42 }}>
+          <DragGroup>
+            <SmokeLogo url={`https://cdn.simpleicons.org/${socials[active].slug}/ffffff`} morphKey={active} />
+          </DragGroup>
+        </Canvas>
+
+        <div className="pointer-events-none absolute inset-x-0 bottom-4 text-center">
+          <div className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-black/30 px-6 py-2 backdrop-blur-sm">
+            <span className="text-xs uppercase tracking-[0.3em] text-white/50">0{active + 1}</span>
+            <span className="font-display text-lg font-black uppercase tracking-wide text-white">{socials[active].name}</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-8 flex items-center justify-center gap-6">
+        <button onClick={() => go(-1)} data-cursor="hover" aria-label="Previous" className="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 text-white transition hover:border-accent hover:bg-white/5">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+        </button>
+        <div className="flex gap-2">
+          {socials.map((_, i) => (
+            <button key={i} onClick={() => setActive(i)} data-cursor="hover" aria-label={`Logo ${i + 1}`} className={`h-2 rounded-full transition-all duration-300 ${i === active ? "w-8 bg-accent" : "w-2 bg-white/25"}`} />
+          ))}
+        </div>
+        <button onClick={() => go(1)} data-cursor="hover" aria-label="Next" className="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 text-white transition hover:border-accent hover:bg-white/5">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+        </button>
+      </div>
+
+      <a href={socials[active].url} target="_blank" rel="noopener noreferrer" data-cursor="hover" className="mx-auto mt-8 block w-fit rounded-full bg-white px-8 py-3 text-sm font-bold uppercase tracking-wider text-black transition hover:bg-white/85">
+        Visit {socials[active].name}
+      </a>
+    </section>
+  );
 }
 
 export default ParticleLogos
