@@ -1,3 +1,4 @@
+import About from '@/components/sections/About'
 import Collection from '@/components/sections/Collection'
 import EditorialBreak from '@/components/sections/EditorialBreak'
 import Film from '@/components/sections/Film'
@@ -31,6 +32,7 @@ const page = () => {
       <Statement />
       <Film />
       <Gallery />
+      <About />
     </main>
   )
 }
