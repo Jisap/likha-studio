@@ -1,6 +1,6 @@
 import Reveal from "@/components/ui/Reveal";
 import AnimatedTitle from "@/components/ui/AnimatedTitle";
-// import MagneticButton from "@/components/ui/MagneticButton";
+import MagneticButton from "@/components/ui/MagneticButton";
 
 const steps = [
   { n: "01", title: "Tell us your idea", desc: "Message us what you need — website, app, system, or video." },
@@ -35,6 +35,17 @@ const Configurator = () => {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={0.2}>
+          <div className="mt-12 flex flex-wrap items-center gap-6">
+            <a href="mailto:hello@likha.studio" data-cursor="hover">
+              <MagneticButton className="rounded-full bg-accent px-10 py-5 font-display text-lg font-black uppercase tracking-wide text-white">
+                Get a Free Quote
+              </MagneticButton>
+            </a>
+            <p className="text-sm text-muted">hello@likha.studio · Replies within 24 hours</p>
+          </div>
+        </Reveal>
       </div>
     </section>
   )
