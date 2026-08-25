@@ -48,7 +48,11 @@ const MagneticButton = ({
   );
 
   return (
-    <button ref={ref} className={className} data-cursor="hover">
+    <button
+      ref={ref}
+      className={className}
+      data-cursor="hover"
+    >
       {children}
     </button>
   )
