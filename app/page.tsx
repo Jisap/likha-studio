@@ -8,6 +8,7 @@ import Hero from '@/components/sections/Hero'
 import Industries from '@/components/sections/Industries'
 import Marquee from '@/components/sections/Marquee'
 import Mission from '@/components/sections/Mission'
+import ParticleLogos from '@/components/sections/ParticleLogos'
 import Pricing from '@/components/sections/Pricing'
 import ShowCase from '@/components/sections/ShowCase'
 import Statement from '@/components/sections/Statement'
@@ -35,6 +36,7 @@ const page = () => {
       <Gallery />
       <About />
       <Configurator />
+      <ParticleLogos />
     </main>
   )
 }
