@@ -147,7 +147,36 @@ const SmokeLogo = ({ url, morphKey }: { url: string; morphKey: number }) => {
   );
 }
 
+function DragGroup({ children }: { children: React.ReactNode }) {
+  const ref = useRef<THREE.Group>(null);
+  const { gl } = useThree();
+  const drag = useRef({ active: false, x: 0, rot: 0 });
 
+  useEffect(() => {
+    const el = gl.domElement;
+    const down = (e: PointerEvent) => { drag.current.active = true; drag.current.x = e.clientX; };
+    const move = (e: PointerEvent) => {
+      if (!drag.current.active) return;
+      drag.current.rot += (e.clientX - drag.current.x) * 0.005;
+      drag.current.x = e.clientX;
+    };
+    const up = () => (drag.current.active = false);
+    el.addEventListener("pointerdown", down);
+    window.addEventListener("pointermove", move);
+    window.addEventListener("pointerup", up);
+    return () => {
+      el.removeEventListener("pointerdown", down);
+      window.removeEventListener("pointermove", move);
+      window.removeEventListener("pointerup", up);
+    };
+  }, [gl]);
+
+  useFrame(() => {
+    if (ref.current) ref.current.rotation.y += (drag.current.rot - ref.current.rotation.y) * 0.1;
+  });
+
+  return <group ref={ref}>{children}</group>;
+}
 
 const ParticleLogos = () => {
   return (
