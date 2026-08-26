@@ -46,6 +46,59 @@ const Contact = () => {
             </div>
           </Reveal>
         </div>
+
+        <Reveal delay={0.1} className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 md:p-10">
+          <div className="flex flex-col gap-6">
+            <div>
+              <label className="mb-2 block text-xs uppercase tracking-widest text-muted">Name</label>
+              <input
+                type="text"
+                placeholder="Your name"
+                className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-white/30 outline-none transition focus:border-accent"
+              />
+            </div>
+
+            <div>
+              <label className="mb-2 block text-xs uppercase tracking-widest text-muted">Email</label>
+              <input
+                type="email"
+                placeholder="you@email.com"
+                className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-white/30 outline-none transition focus:border-accent"
+              />
+            </div>
+
+            <div>
+              <label className="mb-3 block text-xs uppercase tracking-widest text-muted">What do you need?</label>
+              <div className="flex flex-wrap gap-2">
+                {services.map((s) => (
+                  <button
+                    key={s}
+                    type="button"
+                    onClick={() => setService(s)}
+                    data-cursor="hover"
+                    className={`
+                      rounded-full border px-4 py-2 text-sm transition 
+                      ${service === s
+                        ? "border-accent bg-accent/10 text-white"
+                        : "border-white/15 text-white/60 hover:border-white/40"
+                      }`
+                    }
+                  >
+                    {s}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <label className="mb-2 block text-xs uppercase tracking-widest text-muted">Message</label>
+              <textarea rows={4} placeholder="Tell us about your project..." className="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-white/30 outline-none transition focus:border-accent" />
+            </div>
+
+            <a href={`mailto:hello@likha.studio?subject=Project Inquiry: ${service}`} data-cursor="hover" className="rounded-full bg-accent px-8 py-4 text-center text-sm font-bold uppercase tracking-wide text-white transition hover:opacity-85">Send Message</a>
+          </div>
+        </Reveal>
+
       </div>
     </section>
   )
