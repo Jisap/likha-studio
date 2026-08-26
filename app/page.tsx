@@ -16,6 +16,7 @@ import Statement from '@/components/sections/Statement'
 import Stats from '@/components/sections/Stats'
 import Testimonial from '@/components/sections/Testimonial'
 import WhyUs from '@/components/sections/WhyUs'
+import CurtainSection from '@/components/ui/CurtainSection'
 
 
 const page = () => {
@@ -30,8 +31,12 @@ const page = () => {
       <EditorialBreak />
       <WhyUs />
       <ShowCase />
-      <Pricing />
-      <Industries />
+      <CurtainSection>
+        <Pricing />
+      </CurtainSection>
+      <CurtainSection>
+        <Industries />
+      </CurtainSection>
       <Statement />
       <Film />
       <Gallery />
