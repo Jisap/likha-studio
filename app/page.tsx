@@ -1,6 +1,7 @@
 import About from '@/components/sections/About'
 import Collection from '@/components/sections/Collection'
 import Configurator from '@/components/sections/Configurator'
+import Contact from '@/components/sections/Contact'
 import EditorialBreak from '@/components/sections/EditorialBreak'
 import Film from '@/components/sections/Film'
 import Footer from '@/components/sections/Footer'
@@ -43,6 +44,7 @@ const page = () => {
       <About />
       <Configurator />
       <ParticleLogos />
+      <Contact />
       <Footer />
     </main>
   )
