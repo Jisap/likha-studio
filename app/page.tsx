@@ -3,6 +3,7 @@ import Collection from '@/components/sections/Collection'
 import Configurator from '@/components/sections/Configurator'
 import EditorialBreak from '@/components/sections/EditorialBreak'
 import Film from '@/components/sections/Film'
+import Footer from '@/components/sections/Footer'
 import Gallery from '@/components/sections/Gallery'
 import Hero from '@/components/sections/Hero'
 import Industries from '@/components/sections/Industries'
@@ -37,6 +38,7 @@ const page = () => {
       <About />
       <Configurator />
       <ParticleLogos />
+      <Footer />
     </main>
   )
 }
