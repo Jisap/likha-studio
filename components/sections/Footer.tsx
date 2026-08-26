@@ -54,9 +54,50 @@ const Footer = () => {
             </ul>
           </div>
 
+          <div>
+            <p className="mb-3 text-xs uppercase tracking-widest text-muted">Services</p>
+            <ul className="flex flex-col gap-2 text-sm text-white/70">
+              <li>Website Development</li>
+              <li>Mobile App Development</li>
+              <li>System Development</li>
+              <li>Video Editing</li>
+            </ul>
+          </div>
 
+          <div>
+            <p className="mb-3 text-xs uppercase tracking-widest text-muted">Contact</p>
+            <ul className="flex flex-col gap-2 text-sm text-white/70">
+              <li><a href="mailto:hello@likha.studio" data-cursor="hover" className="transition hover:text-white">hello@likha.studio</a></li>
+              <li>+63 900 000 0000</li>
+              <li>Philippines 🇵🇭</li>
+            </ul>
+          </div>
+
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-10 gap-y-6 border-t border-white/10 pt-8">
+            {stack.map((t) => (
+              <div
+                key={t.slug}
+                data-cursor="hover"
+                className="flex items-center gap-2 opacity-50 transition-opacity duration-300 hover:opacity-100"
+              >
+                <img
+                  src={`https://cdn.simpleicons.org/${t.slug}/ffffff`}
+                  alt={t.name}
+                  width={20}
+                  height={20}
+                />
+                <span className="text-sm font-medium text-white">{t.name}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </Reveal>
+
+      <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-muted md:flex-row">
+        <span className="font-display font-black text-white">LIKHA</span>
+        <span>&ldquo;Likha — to create.&rdquo;</span>
+        <span>© 2026 · All rights reserved</span>
+      </div>
     </footer>
   )
 }
