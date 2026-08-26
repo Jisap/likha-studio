@@ -73,7 +73,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-10 gap-y-6 border-t border-white/10 pt-8">
+          <div className="col-span-2 mt-10 flex flex-wrap items-center justify-center gap-x-10 gap-y-6 border-t border-white/10 pt-8 md:col-span-4">
             {stack.map((t) => (
               <div
                 key={t.slug}
